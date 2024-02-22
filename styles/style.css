@@ -38,10 +38,10 @@ ol {
   clip-path: inset(50%);
   white-space: nowrap;
 }
-
 /* примерный лейаут */
 .page {
   display: flex;
+  align-items: center;
   justify-content: center;
   inline-size: 1200px;
   block-size: 100%;
@@ -53,7 +53,7 @@ ol {
 }
 .content {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 30px;
 }
 /* форма */
@@ -72,7 +72,7 @@ ol {
   position: relative;
   flex-direction: column;
   justify-content: flex-start;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .content__details {
@@ -142,6 +142,10 @@ ol {
 .content__card-link_current {
   background-color: #545050;
 }
+.content__card-link:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+}
 .content__video-card-title {
   font-family: Oswald, sans-serif;
   font-size: 30px;
@@ -174,7 +178,7 @@ ol {
   width: fit-content;
   min-width: 225px;
   font-family: inherit;
-  font-size: 18px;
+  font-size: inherit;
   font-weight: 400;
   background-color: inherit;
   color: #fff;
@@ -192,6 +196,7 @@ ol {
 }
 /* обработка кнопок */
 .button {
+  cursor: pointer;
   padding-top: 6px;
   padding-bottom: 6px;
   border: 1px solid #fff;
@@ -241,6 +246,9 @@ ol {
 
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
+}
+.search-form__textfield:focus-visible {
+  outline: none;
 }
 /* Сбрасываем обвудку как указано в задании */
 .content__card-link:focus {
